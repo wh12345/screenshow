@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<quartz>   
+	 <job> 
+		<job-detail>      
+			<name>中午清屏、清队列任务</name>      
+			<group>ClearScreenJob</group>      
+			<description>FirstClearScreenJob</description>      
+			<job-class>com.qy.job.FirstClearScreenJob</job-class>      
+			<volatility>false</volatility>      
+			<durability>false</durability>      
+			<recover>false</recover>
+		</job-detail> 
+		<trigger>   
+			<cron>   
+				<name>中午清屏、清队列任务</name>   
+				<group>AUTO</group>   
+				<job-name>FirstClearScreenJob</job-name>   
+				<job-group>ClearScreenJob</job-group>   
+				<cron-expression>0 20 12 * * ?</cron-expression>   
+			</cron>   
+		</trigger> 
+	</job>
+	
+	<job> 
+		<job-detail>      
+			<name>中午清屏、清队列任务</name>      
+			<group>ClearScreenJob</group>      
+			<description>SecondClearScreenJob</description>      
+			<job-class>com.qy.job.SecondClearScreenJob</job-class>      
+			<volatility>false</volatility>      
+			<durability>false</durability>      
+			<recover>false</recover>
+		</job-detail> 
+		<trigger>   
+			<cron>   
+				<name>中午清屏、清队列任务</name>   
+				<group>AUTO</group>   
+				<job-name>SecondClearScreenJob</job-name>   
+				<job-group>ClearScreenJob</job-group>   
+				<cron-expression>0 33 17 * * ?</cron-expression>   
+			</cron>   
+		</trigger> 
+	</job>
+</quartz>

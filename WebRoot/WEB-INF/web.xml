@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <servlet>  
+        <servlet-name>  
+             QuartzInitializer   
+        </servlet-name>  
+        <display-name>  
+             Quartz Initializer Servlet   
+        </display-name>  
+        <servlet-class>  
+             org.quartz.ee.servlet.QuartzInitializerServlet   
+        </servlet-class>  
+        
+        <init-param>  
+            <param-name>shutdown-on-unload</param-name>  
+            <param-value>true</param-value>  
+        </init-param>  
+        <init-param>  
+            <param-name>start-scheduler-on-load</param-name>  
+            <param-value>true</param-value>  
+        </init-param> 
+        <load-on-startup>  
+             2  
+        </load-on-startup>   
+    </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ScreenController</servlet-name>
+    <servlet-class>com.qy.controller.ScreenController</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ScreenController</servlet-name>
+    <url-pattern>/screencontroller</url-pattern>
+  </servlet-mapping>
+  <session-config>
+		<!-- Default to 5 minute session timeouts -->
+		<session-timeout>10</session-timeout>
+	</session-config>
+
+</web-app>
